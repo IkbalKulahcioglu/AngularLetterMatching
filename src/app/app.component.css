@@ -1,0 +1,21 @@
+.mainArea
+{
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 827px;
+background-color: plum;
+}
+
+.pending{
+    color: grey;
+}
+
+.correct{
+    color:green;
+}
+
+.incorrect{
+    color: red;
+    font-weight: bold;
+}

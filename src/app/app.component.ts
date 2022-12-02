@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { environment } from './../environment/environment';
+import { lorem } from 'faker';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'letter';
+  randomText = lorem.sentence();
+  enteredText="";
+  
+  getInputValue(value: string)
+  {
+    this.enteredText = value;
+    console.log(value);
+  }
+
+  compare(randomLetter: string, enteredLetter: string){
+    if(!enteredLetter)
+    {
+      return 'pending';
+    }
+    return randomLetter === enteredLetter ? 'correct' : 'incorrect';
+  }
 }
